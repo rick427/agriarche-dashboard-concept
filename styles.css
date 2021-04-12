@@ -361,9 +361,26 @@ a {
 }
 
 .price-slider {
-  border: 1px solid blue;
   margin-top: 3rem;
   padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--light-grey);
+  border-radius: 5px;
+}
+
+.price-slider-text {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.price-slider-text .success {
+  color: var(--green);
+}
+.price-slider-text .danger {
+  color: var(--danger);
 }
 
 .footer {
