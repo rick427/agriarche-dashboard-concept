@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.2/chart.min.js"></script>
+    <script src="https://kit.fontawesome.com/d29be4caa8.js" crossorigin="anonymous"></script>
+    <title>Agriarche Dashboard</title>
+</head>
+<body>
+    <main class="container">
+        <!-- Start of menu bar -->
+        <aside class="sidebar">
+            <figure class="sidebar-logo">
+                <img src="assets/logo.png" alt="agriarche-logo">
+            </figure>
+
+            <ul class="sidebar-list">
+                <p class="sidebar-list-heading">Main</p>
+
+                <li class="sidebar-list-item active">
+                    <img class="sidebar-icon" src="/assets/icons/dashboard-2.svg" alt="dashboard">
+                    Dashboard
+                </li>
+                <li class="sidebar-list-item">
+                    <img class="sidebar-icon" src="/assets/icons/develop.svg" alt="partner">
+                    Partner
+                </li>
+                <li class="sidebar-list-item">
+                    <img class="sidebar-icon" src="/assets/icons/box.svg" alt="partner">
+                    Order
+                </li>
+                <li class="sidebar-list-item">
+                    <img class="sidebar-icon" src="/assets/icons/loading.svg" alt="partner">
+                    Pickup
+                </li>
+                <li class="sidebar-list-item">
+                    <img class="sidebar-icon" src="/assets/icons/pickup-truck.svg" alt="partner">
+                    Delivery
+                </li>
+                <li class="sidebar-list-item">
+                    <img class="sidebar-icon" src="/assets/icons/salary.svg" alt="partner">
+                    Settlement
+                </li>
+                <li class="sidebar-list-item">
+                    <img class="sidebar-icon" src="/assets/icons/business-report.svg" alt="partner">
+                    Report
+                </li>
+                <li class="sidebar-list-item">
+                    <img class="sidebar-icon" src="/assets/icons/settings.svg" alt="partner">
+                    Settings
+                </li>
+            </ul>
+        </aside>
+        <!-- End of menu bar -->
+
+        <!-- Start of layout -->
+        <section class="layout">
+            <!-- Start of header -->
+            <header class="header">
+                <div class="header-container">
+                    <img class="header-container-icon" src="assets/icons/menu.svg" alt="menu">
+                    <button class="header-container--btn">new task</button>
+                </div>
+
+                <div class="header-container">
+                    <img class="header-container-icon lg-only" src="assets/icons/search.svg" alt="menu">
+                    <img class="header-container-icon lg-only" src="assets/icons/bell.svg" alt="menu">
+
+                    <div class="header-container-info">
+                        <span class="header-container-info--text">Olu Mighty</span>
+
+                        <figure class="header-container-info--user">
+                            <img src="/assets/user.jpg" alt="Olu-mighty">
+                        </figure>
+                    </div>
+                </div>
+            </header>
+            <!-- End of header -->
+
+            <!-- Start of content -->
+            <section class="content">
+                <div class="content-header">
+                    <h2 class="content-header-main">Analytics</h2>
+                    <p class="content-header-sub">Agriarche / <span>Dashboard</span></p>
+                </div>
+
+                <div class="content-grid">
+                    <article class="content-grid-item">
+                        <h3 class="content-grid-item--text-heading">Trucks Dispatched</h3>
+                        <p class="content-grid-item--text">Previous month vs this month</p>
+                        <p class="content-grid-item--text-bold">24,000.00</p>
+
+                        <div class="content-grid-item--row">
+                            <p class="content-grid-item--text">
+                                <span class="success">&uarr;4.5%</span> increase
+                            </p>
+                            <figure class="content-grid-item--icon">
+                                <img src="assets/icons/pickup-truck.svg" alt="trucks">
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article class="content-grid-item">
+                        <h3 class="content-grid-item--text-heading">Processors</h3>
+                        <p class="content-grid-item--text">Processors joined this month</p>
+                        <p class="content-grid-item--text-bold">40.00</p>
+                        
+                        <div class="content-grid-item--row">
+                            <p class="content-grid-item--text">
+                                <span class="success">&uarr;10%</span> increase
+                            </p>
+                            <figure class="content-grid-item--icon">
+                                <img src="assets/icons/team.svg" alt="trucks">
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article class="content-grid-item">
+                        <h3 class="content-grid-item--text-heading">Influencers</h3>
+                        <p class="content-grid-item--text">Previous month vs this month</p>
+                        <p class="content-grid-item--text-bold">44.00</p>
+
+                        <div class="content-grid-item--row">
+                            <p class="content-grid-item--text">
+                                <span class="danger">&darr;5%</span> decrease
+                            </p>
+                            <figure class="content-grid-item--icon">
+                                <img src="assets/icons/social-media.svg" alt="trucks">
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article class="content-grid-item">
+                        <h3 class="content-grid-item--text-heading">Logistics Company</h3>
+                        <p class="content-grid-item--text">Previous month vs this month</p>
+                        <p class="content-grid-item--text-bold">12.00</p>
+
+                        <div class="content-grid-item--row">
+                            <p class="content-grid-item--text">
+                                <span class="danger">&darr;3%</span> decrease
+                            </p>
+                            <figure class="content-grid-item--icon">
+                                <img src="assets/icons/logistics.svg" alt="trucks">
+                            </figure>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="content-chart-container">
+                    <div class="chart-wrapper">
+                        <canvas id="fpChart"></canvas>
+                    </div>
+
+                    <div class="chart-column">
+                        <div class="chart-column-card">
+                            <div class="chart-column-wrapper">
+                                <figure class="column-icon">
+                                    <img src="assets/icons/money.svg" alt="revenue">
+                                </figure>
+    
+                                <div class="column-info">
+                                    <h2 class="column-info-heading">&#8358;28,780,000</h2>
+                                    <p class="column-info-text light">Total Revenue</p>
+                                </div>
+                            </div>
+                            <div class="column-stats">
+                                <p class="column-info-text space">
+                                    <span class="danger">&darr;8%</span> decrease - January
+                                </p>
+                                <p class="column-info-text space">
+                                    <span class="success">&uarr;15%</span> increase - Feburary
+                                </p>
+                                <p class="column-info-text space">
+                                    <span class="success">&uarr;10%</span> increase - March
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chart-column-card">
+                            <div class="chart-column-wrapper">
+                                <figure class="column-icon">
+                                    <img src="assets/icons/commodity.svg" alt="commodity">
+                                </figure>
+    
+                                <div class="column-info">
+                                    <h2 class="column-info-heading">&#8358;68,130.00</h2>
+                                    <p class="column-info-text light">Value of commodity</p>
+                                </div>
+                            </div>
+                            <div class="column-stats">
+                                <p class="column-info-text space">
+                                    <span class="danger">&darr;3%</span> decrease yesterday
+                                </p>
+                                <p class="column-info-text space">
+                                    <span class="success">&uarr;15%</span> increase this week
+                                </p>
+                                <p class="column-info-text space">
+                                    <span class="success">&uarr;20%</span> increase this month
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chart-column-card">
+                            <div class="chart-column-wrapper">
+                                <figure class="column-icon">
+                                    <img src="assets/icons/commodity-volume.svg" alt="commodity">
+                                </figure>
+    
+                                <div class="column-info">
+                                    <h2 class="column-info-heading">13,948,680.00</h2>
+                                    <p class="column-info-text light">Volume of commodity</p>
+                                </div>
+                            </div>
+                            <div class="column-stats">
+                                <p class="column-info-text space">
+                                    <span class="danger">&darr;4%</span> decrease yesterday
+                                </p>
+                                <p class="column-info-text space">
+                                    <span class="danger">&darr;50%</span> decrease this week
+                                </p>
+                                <p class="column-info-text space">
+                                    <span class="success">&uarr;2%</span> increase this month
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- End of content -->
+
+            <!-- Start of footer -->
+            <footer class="footer">
+                <p class="footer-text">&copy; 2021 Agriarche</p>
+                <p class="footer-text">All rights reserved</p>
+            </footer>
+            <!-- End of footer -->
+        </section>
+        <!-- End of layout -->
+    </main>
+</body>
+</html>
